@@ -1,0 +1,318 @@
+/* style.css - Matthew Gunawan - CSE 110 Lab 3 */
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-color: #2c3e50;
+    --link-color: #2980b9;
+}
+/* universal selector */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(240, 240, 240);
+    color: var(--main-color, black);
+    font-size: 1rem;
+    margin: 0;
+    padding: 20px;
+}
+/* headings */
+h1 {
+    color: hsl(210, 29%, 24%);
+    text-align: center;
+    font-size: 24pt;
+}
+
+h2, h3 {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+/* header */
+header {
+    background-color: #2c3e50;
+    padding-top: 15px; 
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid #1a252f;
+    border-radius: 8px;
+    margin: 0 0 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+/* child combinator */
+header > h1 {
+    color: hsla(0, 0%, 100%, 0.95);
+    margin: 0 0 10px 0;
+}
+/* descendant combinator */
+header nav a {
+    color: lightblue;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 0.9em;
+}
+/* pseudo-class hover */
+header nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+/* pseudo-class active */
+header nav a:active {
+    color: #ccc;
+}
+/* attribute selector */
+a[href^="#"] {
+    font-weight: bold;
+}
+/* main container */
+main {
+    max-width: 900px;
+    min-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* sections */
+section {
+    background-color: white;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
+    border-radius: 6px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+/* combining element and class selector */
+section.card {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+/* ID selector */
+#overview {
+    border-left: 5px solid color(srgb 0.17 0.37 0.49);
+}
+/* class selector */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.4);
+    padding: 2px 5px;
+}
+/* lists */
+ul, ol {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 25px;
+}
+/* image */
+img {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+/* general sibling combinator */
+h3 ~ ul {
+    margin-top: 5px;
+}
+/* adjacent sibling combinator */
+h3 + ol {
+    margin-top: 5px;
+}
+/* details/summary */
+details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+}
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--link-color, blue);
+}
+/* pseudo-class active */
+summary:active {
+    color: darkblue;
+}
+/* media elements */
+audio, video {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+}
+/* form */
+form {
+    margin-top: 10px;
+}
+fieldset {
+    border-style: solid;
+    border-color: #aaa;
+    border-width: 1px;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin: 0 0 15px 0;
+    background-color: #fafafa;
+}
+label {
+    display: inline-block;
+    margin: 3px 0;
+}
+/* attribute selector */
+input[type="text"],
+input[type="date"] {
+    display: block;
+    padding: 6px 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    font-size: 14px;
+}
+select, textarea {
+    display: block;
+    padding: 6px 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+textarea {
+    width: 400px;
+    max-width: 100%;
+}
+button {
+    padding: 8px 20px;
+    margin: 5px 5px 0 0;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+/* attribute selector */
+button[type="submit"] {
+    background-color: #2c3e50;
+    color: white;
+    border: 2px solid #1a252f;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+button[type="reset"] {
+    background-color: white;
+    color: #2c3e50;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+/* :has() selector */
+fieldset:has(input[type="checkbox"]:checked) {
+    background-color: #eaf4fb;
+    border-color: #2980b9;
+}
+/* color-mix */
+section#misc {
+    background-color: color-mix(in srgb, white 90%, lightyellow 10%);
+}
+/* footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 0.5cm 1cm;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-radius: 6px;
+    font-size: 14px;
+}
+footer a {
+    color: lightblue;
+}
+footer a:hover {
+    color: white;
+}
+/* flexbox for attendance */
+#attendance ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+}
+#attendance ul li {
+    background-color: #eaf4fb;
+    border: 1px solid #2980b9;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: inline;
+    font-size: 14px;
+}
+/* grid for role assignments */
+#new-business ol {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+#new-business ol li {
+    background-color: #f0f8ff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+/* nested selectors */
+#new-business {
+    & h3 {
+        color: #2980b9;
+    }
+
+    & ul {
+        list-style: disc;
+        padding-left: 25px;
+    }
+}
+/* position absolute badge */
+#overview::after {
+    content: 'Spring 2026';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #2980b9;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 75%;
+}
+/* display none utility */
+.hidden {
+    display: none;
+}
+/* mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    header nav a {
+        display: none;
+    }
+    #overview::after {
+        display: none;
+    }
+    textarea, input[type="text"], input[type="date"] {
+        width: 100%;
+    }
+}
